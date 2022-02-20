@@ -1,3 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using AlgorithmPlayground.Core.Algorithms.BubbleSort;
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Hello world! Make sure to uncomment desired demo in Program.cs.\n");
+
+// Uncomment desired demo
+// IterativeBubbleSortDemo.Run();
+RecursiveBubbleSort.Run();
