@@ -8,7 +8,7 @@ public static class IterativeBubbleSortDemo
     public static void Run()
     {
         Console.WriteLine("---*** ITERATIVE BUBBLE SORT DEMO ***---\n");
-        Console.WriteLine("Complexity: O(n^2), visible below.");
+        Console.WriteLine("Time complexity: O(n^2), visible below.");
         RunDemo(new[] { 6, 5, 3, 1, 8, 7, 2, 4 });
         RunDemo(new[] { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 });
         

@@ -8,7 +8,7 @@ public static class RecursiveBubbleSortDemo
     public static void Run()
     {
         Console.WriteLine("---*** RECURSIVE BUBBLE SORT DEMO ***---\n");
-        Console.WriteLine("Complexity: O(n^2).");
+        Console.WriteLine("Time complexity: O(n^2).");
         RunDemo(new[] { 6, 5, 3, 1, 8, 7, 2, 4 });
         RunDemo(new[] { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 });
         
