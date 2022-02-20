@@ -4,4 +4,4 @@ Console.WriteLine("Hello world! Make sure to uncomment desired demo in Program.c
 
 // Uncomment desired demo
 // IterativeBubbleSortDemo.Run();
-RecursiveBubbleSort.Run();
+RecursiveBubbleSortDemo.Run();

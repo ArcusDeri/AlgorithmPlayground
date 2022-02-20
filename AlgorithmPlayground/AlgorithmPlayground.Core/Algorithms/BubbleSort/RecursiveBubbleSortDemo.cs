@@ -3,7 +3,7 @@ using AlgorithmPlayground.Core.Generators;
 
 namespace AlgorithmPlayground.Core.Algorithms.BubbleSort;
 
-public class RecursiveBubbleSort
+public static class RecursiveBubbleSortDemo
 {
     public static void Run()
     {
