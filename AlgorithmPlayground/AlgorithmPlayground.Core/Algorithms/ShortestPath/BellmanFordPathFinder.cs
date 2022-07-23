@@ -7,6 +7,7 @@ public class BellmanFordPathFinder
     public Dictionary<string, VertexPath> Resolve(VertexEdge[] graph, string startVertex)
     {
         var pathTable = graph.Select(e => e.From)
+            .Union(graph.Select(e => e.To))
             .Distinct()
             .ToDictionary(k => k, v => new VertexPath(v));
         pathTable[startVertex].TravelCost = 0;
