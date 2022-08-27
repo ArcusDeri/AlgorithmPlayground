@@ -40,6 +40,7 @@ public static class CancelListOfTasksDemo
 
     public static async Task Run()
     {
+        _cts = new CancellationTokenSource();
         LogWithTimestamp($"{nameof(CancelListOfTasksDemo)} started, thread: {Thread.CurrentThread.ManagedThreadId}");
         LogWithTimestamp("Press ENTER to trigger cancellation...\n");
 
@@ -53,7 +54,7 @@ public static class CancelListOfTasksDemo
 
             LogWithTimestamp("ENTER key pressed: cancelling downloads");
             _cts.Cancel();
-            _cts = new CancellationTokenSource();
+            _cts.Dispose();
         });
         var sumPageSizesTask = SumPageSizesAsync();
         await Task.WhenAny(new[] {cancelTask, sumPageSizesTask});
