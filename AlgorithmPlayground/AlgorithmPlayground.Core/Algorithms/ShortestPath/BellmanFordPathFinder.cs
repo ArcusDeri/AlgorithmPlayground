@@ -4,7 +4,7 @@ namespace AlgorithmPlayground.Core.Algorithms.ShortestPath;
 
 public class BellmanFordPathFinder
 {
-    public Dictionary<string, VertexPath> Resolve(VertexEdge[] graph, string startVertex)
+    public static Dictionary<string, VertexPath> Resolve(VertexEdge[] graph, string startVertex)
     {
         var pathTable = graph.Select(e => e.From)
             .Union(graph.Select(e => e.To))

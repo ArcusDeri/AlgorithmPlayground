@@ -7,7 +7,6 @@ namespace AlgorithmPlayground.Core.Tests.Algorithms.ShortestPath;
 
 public class BellmanFordPathFinderTests
 {
-    private readonly BellmanFordPathFinder _pathFinder = new BellmanFordPathFinder();
     
     [Fact]
     public void Resolve_ShouldReturnCorrectPaths_WhenCalledForScenario1()
@@ -36,7 +35,7 @@ public class BellmanFordPathFinderTests
         };
 
         // Act
-        var result = _pathFinder.Resolve(problemGraph, "S");
+        var result = BellmanFordPathFinder.Resolve(problemGraph, "S");
 
         // Assert
         Assert.NotEmpty(result);
@@ -89,7 +88,7 @@ public class BellmanFordPathFinderTests
         };
 
         // Act
-        var result = _pathFinder.Resolve(problemGraph, "S");
+        var result = BellmanFordPathFinder.Resolve(problemGraph, "S");
 
         // Assert
         Assert.NotEmpty(result);
