@@ -64,4 +64,21 @@ public static class DuplicateFinder
 
         return false;
     }
+
+    public static bool DictionaryBasedCheckForDuplicates(int[] array)
+    {
+        // O(n)
+        var lookup = new Dictionary<int, int>();
+        for (var i = 0; i < array.Length; i++)
+        {
+            if (lookup.ContainsKey(array[i]))
+            {
+                return true;
+            }
+
+            lookup[array[i]] = i;
+        }
+
+        return false;
+    }
 }
