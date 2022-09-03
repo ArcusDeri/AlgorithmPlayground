@@ -23,4 +23,45 @@ public static class DuplicateFinder
 
         return false;
     }
+
+    /// <param name="array">Sorted array</param>
+    public static bool BinaryCheckForDuplicates(int[] array)
+    {
+        // O(n*log(n))
+        int HasDuplicateOf(int val)
+        {
+            var min = 0;
+            var max = array.Length;
+            while (min <= max)
+            {
+                var middle = (min + max) / 2;
+                if (array[middle] == val)
+                {
+                    return middle;
+                }
+
+                if (array[middle] < val)
+                {
+                    min = middle;
+                }
+                else
+                {
+                    max = middle;
+                }
+            }
+
+            return -1;
+        }
+
+        for (var i = 0; i < array.Length; i++)
+        {
+            var indexOfLookedUpValue = HasDuplicateOf(array[i]);
+            if (indexOfLookedUpValue != -1 && indexOfLookedUpValue != i)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

@@ -17,4 +17,17 @@ public class DuplicateFinderTests
 
         Assert.Equal(expectedResult, result);
     }
+
+    [Theory]
+    [InlineData(false, new[] {1, 2, 3, 4, 5, 6})]
+    [InlineData(true, new[] {1, 10, 10, 20, 30, 200})]
+    [InlineData(true, new[] {0, 0})]
+    public void BinaryCheckForDuplicates_ShouldReturnExpectedResult_WhenCalled(bool expectedResult, int[] array)
+    {
+        // Arrange
+        // Act
+        var result = DuplicateFinder.BinaryCheckForDuplicates(array);
+
+        Assert.Equal(expectedResult, result);
+    }
 }
