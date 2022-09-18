@@ -1,10 +1,10 @@
 ﻿using System;
-using AlgorithmPlayground.Core.Algorithms.BubbleSort;
+using AlgorithmPlayground.Core.Algorithms.Sorting;
 using Xunit;
 
-namespace AlgorithmPlayground.Core.Tests.Algorithms.BubbleSort;
+namespace AlgorithmPlayground.Core.Tests.Algorithms.Sorting;
 
-public class RecursiveBubbleSorterTests
+public class IterativeBubbleSorterTests
 {
     [Theory]
     [InlineData(new [] {6, 5, 3, 1, 8, 7, 2, 4})]
@@ -17,7 +17,7 @@ public class RecursiveBubbleSorterTests
         Array.Sort(sorted);
         
         // Act
-        var operationCount = RecursiveBubbleSorter.Sort(unsorted);
+        var operationCount = IterativeBubbleSorter.Sort(unsorted);
         
         // Assert
         Assert.True(operationCount > 0);

@@ -1,4 +1,4 @@
-﻿namespace AlgorithmPlayground.Core.Algorithms.BubbleSort;
+﻿namespace AlgorithmPlayground.Core.Algorithms.Sorting;
 
 public class IterativeBubbleSorter
 {
