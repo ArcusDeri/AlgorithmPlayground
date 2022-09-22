@@ -58,9 +58,9 @@ public class ArrayChapterTests
     }
 
     [Theory]
-    [InlineData(new [] {1, 2, 2, 3, 5, 6}, new[] {1, 2, 3, 0, 0, 0}, 3, new [] {2, 5, 6}, 3)]
-    [InlineData(new [] {1}, new[] {1}, 1, new int[0], 0)]
-    [InlineData(new [] {1}, new[] {0}, 0, new[] {1}, 1)]
+    [InlineData(new[] {1, 2, 2, 3, 5, 6}, new[] {1, 2, 3, 0, 0, 0}, 3, new[] {2, 5, 6}, 3)]
+    [InlineData(new[] {1}, new[] {1}, 1, new int[0], 0)]
+    [InlineData(new[] {1}, new[] {0}, 0, new[] {1}, 1)]
     public void _05_MergeSortedArray_ShouldReturnExpectedResult(int[] expected, int[] nums1, int m, int[] nums2, int n)
     {
         // Arrange
@@ -111,10 +111,10 @@ public class ArrayChapterTests
     }
 
     [Theory]
-    [InlineData(false, new [] {2, 1})]  
-    [InlineData(false, new [] {3, 5, 5})]
-    [InlineData(true, new [] {0, 3, 2, 1})]
-    [InlineData(false, new [] {0,1,2,3,4,5,6,7,8,9})]
+    [InlineData(false, new[] {2, 1})]
+    [InlineData(false, new[] {3, 5, 5})]
+    [InlineData(true, new[] {0, 3, 2, 1})]
+    [InlineData(false, new[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9})]
     public void _09_ValidMountainArraySolve_ShouldReturnExpectedResult_WhenCalled(bool expectedResult, int[] array)
     {
         // Arrange
@@ -143,7 +143,7 @@ public class ArrayChapterTests
     public void _11_RemoveDuplicatesFromSortedArray_ShouldReturnExpectedResult()
     {
         // Arrange
-        var originalArray = new [] {1, 1, 2};
+        var originalArray = new[] {1, 1, 2};
         var targetArray = new[] {1, 1, 2};
 
         // Act
@@ -154,9 +154,9 @@ public class ArrayChapterTests
     }
 
     [Theory]
-    [InlineData(new [] {1, 3, 12, 0, 0}, new [] {0, 1, 0, 3, 12})]  
-    [InlineData(new [] {0}, new [] {0})]
-    [InlineData(new [] {1}, new [] {1})]
+    [InlineData(new[] {1, 3, 12, 0, 0}, new[] {0, 1, 0, 3, 12})]
+    [InlineData(new[] {0}, new[] {0})]
+    [InlineData(new[] {1}, new[] {1})]
     public void _12_MoveZeroes_ShouldReturnExpectedResult(int[] expected, int[] array)
     {
         // Arrange
@@ -192,5 +192,19 @@ public class ArrayChapterTests
 
         // Assert
         Assert.Equivalent(expected, array.Take(result));
+    }
+
+    [Theory]
+    [InlineData(3, new[] {1, 1, 4, 2, 1, 3})]
+    [InlineData(5, new[] {5, 1, 2, 3, 4})]
+    [InlineData(0, new[] {1, 2, 3, 4, 5})]
+    public void _15_HeightChecker_ShouldReturnExpectedResult(int expected, int[] heights)
+    {
+        // Arrange
+        // Act
+        var result = _15_HeightChecker.HeightChecker(heights);
+
+        // Assert
+        Assert.Equal(expected, result);
     }
 }
