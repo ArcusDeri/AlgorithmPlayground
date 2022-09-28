@@ -1,7 +1,7 @@
 ﻿using AlgorithmPlayground.LeetCode.Chapters.Arrays;
 using Xunit;
 
-namespace AlgorithmPlayground.LeetCode.Tests.Chapters.Arrays;
+namespace AlgorithmPlayground.LeetCode.Tests.Chapters;
 
 public class ArrayChapterTests
 {
