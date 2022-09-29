@@ -32,4 +32,20 @@ public class BeginnersGuideTests
         // Assert
         Assert.Equal(expectedResult, result);
     }
+
+    [Theory]
+    [InlineData(new[] {"1", "2", "Fizz"}, 3)]
+    [InlineData(new[] {"1", "2", "Fizz", "4", "Buzz"}, 5)]
+    [InlineData(
+        new[] {"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"},
+        15)]
+    public void _3_412_FizzBuzz_ShouldReturnExpectedResult(string[] expectedResult, int n)
+    {
+        // Arrange
+        // Act
+        var result = _3_412_FizzBuzz.FizzBuzz(n);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
+    }
 }
