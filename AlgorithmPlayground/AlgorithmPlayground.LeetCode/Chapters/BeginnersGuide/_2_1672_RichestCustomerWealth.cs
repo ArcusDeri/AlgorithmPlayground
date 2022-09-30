@@ -3,7 +3,7 @@
 public static class _2_1672_RichestCustomerWealth
 {
     /// <summary>
-    /// <a href="https://leetcode.com/problems/richest-customer-wealth/">Link to problem</a>
+    /// https://leetcode.com/problems/richest-customer-wealth/
     /// </summary>
     public static int MaximumWealth(int[][] accounts)
     {

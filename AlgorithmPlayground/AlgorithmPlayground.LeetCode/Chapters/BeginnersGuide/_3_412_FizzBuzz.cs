@@ -4,7 +4,7 @@ public static class _3_412_FizzBuzz
 {
     /// <summary>
     /// Unusual, but very fast (&lt;8ms)
-    /// <a href="https://leetcode.com/problems/fizz-buzz/">Link to problem</a>
+    /// https://leetcode.com/problems/fizz-buzz/
     /// </summary>
     public static IList<string> FizzBuzz(int n)
     {

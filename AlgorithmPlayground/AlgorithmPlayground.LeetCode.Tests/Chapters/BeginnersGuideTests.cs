@@ -48,4 +48,18 @@ public class BeginnersGuideTests
         // Assert
         Assert.Equal(expectedResult, result);
     }
+
+    [Theory]
+    [InlineData(6, 14)]
+    [InlineData(4, 8)]
+    [InlineData(12, 123)]
+    public void _4_1342_NumberOfSteps_ShouldReturnExpectedResult(int expected, int num)
+    {
+        // Arrange
+        // Act
+        var result = _4_1342_NumberOfStepsToReduceANumberToZero.NumberOfSteps(num);
+
+        // Assert
+        Assert.Equal(expected, result);
+    }
 }
