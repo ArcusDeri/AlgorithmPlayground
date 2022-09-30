@@ -1,4 +1,5 @@
 ﻿using AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide;
+using AlgorithmPlayground.LeetCode.Model;
 using Xunit;
 
 namespace AlgorithmPlayground.LeetCode.Tests.Chapters;
@@ -61,5 +62,33 @@ public class BeginnersGuideTests
 
         // Assert
         Assert.Equal(expected, result);
+    }
+
+    [Fact]
+    public void _5_876_MiddleNode_ShouldReturnExpectedResult_v1()
+    {
+        // Arrange
+        var expected = new ListNode(3, new ListNode(4, new ListNode(5)));
+        var input = new ListNode(1, new ListNode(2, expected));
+
+        // Act
+        var result = _5_876_MiddleOfTheLinkedList.MiddleNode(input);
+
+        // Assert
+        Assert.Same(expected, result);
+    }
+
+    [Fact]
+    public void _5_876_MiddleNode_ShouldReturnExpectedResult_v2()
+    {
+        // Arrange
+        var expected = new ListNode(4, new ListNode(5, new ListNode(6)));
+        var input = new ListNode(1, new ListNode(2, new ListNode(3, expected)));
+
+        // Act
+        var result = _5_876_MiddleOfTheLinkedList.MiddleNode(input);
+
+        // Assert
+        Assert.Same(expected, result);
     }
 }
