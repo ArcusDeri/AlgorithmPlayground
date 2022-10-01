@@ -91,4 +91,19 @@ public class BeginnersGuideTests
         // Assert
         Assert.Same(expected, result);
     }
+
+    [Theory]
+    [InlineData(false, "a", "b")]
+    [InlineData(false, "aa", "ab")]
+    [InlineData(true, "aa", "aab")]
+    [InlineData(true, "aab", "baa")]
+    public void _6_383_CanConstruct_ShouldReturnExpectedResult(bool expected, string ransomNote, string magazine)
+    {
+        // Arrange
+        // Act
+        var result = _6_383_RansomNote.CanConstruct(ransomNote, magazine);
+
+        // Assert
+        Assert.Equal(expected, result);
+    }
 }
