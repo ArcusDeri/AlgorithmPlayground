@@ -18,4 +18,17 @@ public class TopInterviewQuestionsEasyTests
         // Assert
         Assert.Equal(expected, result);
     }
+
+    [Theory]
+    [InlineData(new[] {5, 6, 7, 1, 2, 3, 4}, new[] {1, 2, 3, 4, 5, 6, 7}, 3)]
+    [InlineData(new[] {3, 99, -1, -100}, new[] {-1, -100, 3, 99}, 2)]
+    public void _3_Rotate_ShouldReturnExpectedResult(int[] expected, int[] nums, int k)
+    {
+        // Arrange
+        // Act
+        _3_RotateArray.Rotate(nums, k);
+
+        // Assert
+        Assert.Equal(expected, nums);
+    }
 }
