@@ -31,4 +31,18 @@ public class TopInterviewQuestionsEasyTests
         // Assert
         Assert.Equal(expected, nums);
     }
+
+    [Theory]
+    [InlineData(true, new[] {1, 2, 3, 1})]
+    [InlineData(false, new[] {1, 2, 3, 4})]
+    [InlineData(true, new[] {1, 1, 1, 3, 3, 4, 3, 2, 4, 2})]
+    public void _4_ContainsDuplicate_ShouldReturnExpectedResult(bool expected, int[] nums)
+    {
+        // Arrange
+        // Act
+        var result = _4_ContainsDuplicate.ContainsDuplicate(nums);
+
+        // Assert
+        Assert.Equal(expected, result);
+    }
 }
