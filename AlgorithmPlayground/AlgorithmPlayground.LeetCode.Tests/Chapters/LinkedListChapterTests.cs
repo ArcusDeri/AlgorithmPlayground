@@ -267,7 +267,7 @@ public class LinkedListChapterTests
         // Act
         var result = _6_ReverseLinkedList.ReverseList(head);
         var currentNode = result;
-        while (currentNode is {})
+        while (currentNode is { })
         {
             resultValues[i] = currentNode.val;
             currentNode = currentNode.next;
@@ -277,5 +277,71 @@ public class LinkedListChapterTests
         // Assert
         Assert.NotNull(result);
         Assert.Equal(expectedValues, resultValues);
+    }
+
+    [Fact]
+    public void _7_RemoveElementsShouldReturnExpectedResult_WhenGivenListHasTwoElementsToRemove()
+    {
+        // Arrange
+        const int valueToRemove = 6;
+        var head = new ListNode(1, new ListNode(2, new ListNode(valueToRemove, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(valueToRemove)))))));
+        var expectedValues = new[] {1, 2, 3, 4, 5};
+        var resultValues = new int[5];
+        var i = 0;
+
+        // Act
+        var result = _7_RemoveLInkedListElements.RemoveElements(head, valueToRemove);
+        while (result is {})
+        {
+            resultValues[i] = result.val;
+            result = result.next;
+            i++;
+        }
+
+        // Assert
+        Assert.Equal(expectedValues, resultValues);
+    }
+
+    [Fact]
+    public void _7_RemoveElementsShouldReturnNull_WhenGivenListIsNull()
+    {
+        // Arrange
+        var valueToRemove = 1;
+        // Act
+        var result = _7_RemoveLInkedListElements.RemoveElements(null, 1);
+
+        // Assert
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void _7_RemoveElementsShouldReturnNull_WhenAllElementsShouldBeDeleted()
+    {
+        // Arrange
+        const int valueToRemove = 7;
+        var head = new ListNode(valueToRemove, new ListNode(valueToRemove, new ListNode(valueToRemove, new ListNode(valueToRemove))));
+
+        // Act
+        var result = _7_RemoveLInkedListElements.RemoveElements(head, valueToRemove);
+
+        // Assert
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void _7_RemoveElementsShouldReturnExpectedResult_WhenFirstNodeShouldBeRemovedFromListOfTwoNodes()
+    {
+        // Arrange
+        const int valueToRemove = 1;
+        var expectedValue = 2;
+        var head = new ListNode(valueToRemove, new ListNode(2));
+
+        // Act
+        var result = _7_RemoveLInkedListElements.RemoveElements(head, valueToRemove);
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Null(result.next);
+        Assert.Equal(expectedValue, result.val);
     }
 }
