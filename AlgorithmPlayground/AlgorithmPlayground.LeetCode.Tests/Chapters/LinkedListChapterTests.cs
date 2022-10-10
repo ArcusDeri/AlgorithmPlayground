@@ -280,7 +280,7 @@ public class LinkedListChapterTests
     }
 
     [Fact]
-    public void _7_RemoveElementsShouldReturnExpectedResult_WhenGivenListHasTwoElementsToRemove()
+    public void _7_RemoveElementsShould_ReturnExpectedResult_WhenGivenListHasTwoElementsToRemove()
     {
         // Arrange
         const int valueToRemove = 6;
@@ -303,7 +303,7 @@ public class LinkedListChapterTests
     }
 
     [Fact]
-    public void _7_RemoveElementsShouldReturnNull_WhenGivenListIsNull()
+    public void _7_RemoveElements_ShouldReturnNull_WhenGivenListIsNull()
     {
         // Arrange
         var valueToRemove = 1;
@@ -315,7 +315,7 @@ public class LinkedListChapterTests
     }
 
     [Fact]
-    public void _7_RemoveElementsShouldReturnNull_WhenAllElementsShouldBeDeleted()
+    public void _7_RemoveElements_ShouldReturnNull_WhenAllElementsShouldBeDeleted()
     {
         // Arrange
         const int valueToRemove = 7;
@@ -329,7 +329,7 @@ public class LinkedListChapterTests
     }
 
     [Fact]
-    public void _7_RemoveElementsShouldReturnExpectedResult_WhenFirstNodeShouldBeRemovedFromListOfTwoNodes()
+    public void _7_RemoveElements_ShouldReturnExpectedResult_WhenFirstNodeShouldBeRemovedFromListOfTwoNodes()
     {
         // Arrange
         const int valueToRemove = 1;
@@ -343,5 +343,47 @@ public class LinkedListChapterTests
         Assert.NotNull(result);
         Assert.Null(result.next);
         Assert.Equal(expectedValue, result.val);
+    }
+
+    [Fact]
+    public void _8_OddEvenList_ShouldReturnExpectedResult_v1()
+    {
+        // Arrange
+        var head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+        var expectedValues = new[] {1, 3, 5, 2, 4};
+        var resultValues = new int[expectedValues.Length];
+        var i = 0;
+
+        // Act
+        var result = _8_OddEvenLinkedList.OddEvenList(head);
+        while (result != null)
+        {
+            resultValues[i++] = result.val;
+            result = result.next;
+        }
+
+        // Assert
+        Assert.Equal(expectedValues, resultValues);
+    }
+
+    [Fact]
+    public void _8_OddEvenList_ShouldReturnExpectedResult_v2()
+    {
+        // Arrange
+        var head = new ListNode(2, new ListNode(1, new ListNode(3, new ListNode(5, new ListNode(6, new ListNode(4, new ListNode(7, new ListNode(8))))))));
+        var expectedValues = new[] {2, 3, 6, 7, 1, 5, 4, 8};
+        var resultValues = new int[expectedValues.Length];
+        var i = 0;
+
+        // Act
+        var result = _8_OddEvenLinkedList.OddEvenList(head);
+        while (result != null)
+        {
+            resultValues[i++] = result.val;
+            result = result.next;
+        }
+
+        // Assert
+        Assert.Equal(expectedValues, resultValues);
     }
 }
