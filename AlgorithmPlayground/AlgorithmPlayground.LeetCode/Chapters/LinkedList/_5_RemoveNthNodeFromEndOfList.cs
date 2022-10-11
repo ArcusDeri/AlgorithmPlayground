@@ -9,34 +9,24 @@ public static class _5_RemoveNthNodeFromEndOfList
     /// </summary>
     public static ListNode? RemoveNthFromEnd(ListNode head, int n)
     {
-        int i = 1, length = 1;
-        var lastNode = head;
-        var currentNode = head;
+        var gap = 0;
+        var dummyHead = new ListNode(0, head);
+        var slow = dummyHead;
+        var fast = head;
 
-        while (lastNode.next is { })
+        while (gap != n)
         {
-            lastNode = lastNode.next;
-            length++;
+            fast = fast.next;
+            gap++;
         }
 
-        if (length == n)
+        while (fast is { })
         {
-            return head.next;
+            slow = slow.next;
+            fast = fast.next;
         }
 
-        while (i < length - n)
-        {
-            currentNode = currentNode.next;
-            i++;
-        }
-
-        if (i == 1 && n == 1 && length == 1)
-        {
-            return head.next;
-        }
-
-        currentNode.next = currentNode.next.next;
-        
-        return head;
+        slow.next = slow.next.next;
+        return dummyHead.next;
     }
 }
