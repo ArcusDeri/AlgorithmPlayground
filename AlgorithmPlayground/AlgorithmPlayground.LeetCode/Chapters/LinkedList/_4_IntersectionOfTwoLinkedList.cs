@@ -6,8 +6,24 @@ public static class _4_IntersectionOfTwoLinkedList
 {
     /// <summary>
     /// https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1215/
+    /// Smart version shared by other Leetcode user.
     /// </summary>
-    public static ListNode GetIntersectionNode(ListNode headA, ListNode headB)
+    public static ListNode? GetIntersectionNode(ListNode headA, ListNode headB)
+    {
+        var currentA = headA;
+        var currentB = headB;
+
+        while (currentA != currentB){
+            currentA = currentA == null ? headB : currentA.next;
+            currentB = currentB == null ? headA : currentB.next;
+        }
+        return currentA;
+    }
+
+    /// <summary>
+    /// First attempt to solve the problem. 
+    /// </summary>
+    public static ListNode? GetIntersectionNodeBeforeRefactor(ListNode headA, ListNode headB)
     {
         var hasInterSection = false;
         var currentA = headA;
