@@ -386,4 +386,30 @@ public class LinkedListChapterTests
         // Assert
         Assert.Equal(expectedValues, resultValues);
     }
+
+    [Fact]
+    public void _9_IsPalindrome_ShouldReturnTrue_ForPalindromicLinkedList()
+    {
+        // Arrange
+        var head = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
+
+        // Act
+        var result = _9_PalindromeLinkedList.IsPalindrome(head);
+
+        // Assert
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void _9_IsPalindrome_ShouldReturnFalse_ForNonPalindromicLinkedList()
+    {
+        // Arrange
+        var head = new ListNode(1, new ListNode(2));
+
+        // Act
+        var result = _9_PalindromeLinkedList.IsPalindrome(head);
+
+        // Assert
+        Assert.False(result);
+    }
 }
