@@ -30,4 +30,16 @@ public static class _7_RemoveLInkedListElements
 
         return preHead.next;
     }
+
+    /// <summary>
+    /// Another approach with time complexity O(n) and space complexity O(n)
+    /// </summary>
+    public static ListNode? RemoveElementsRecursively(ListNode? head, int val)
+    {
+        if (head is null){
+            return head;
+        }
+        head.next = RemoveElements(head.next, val);
+        return head.val == val ? head.next : head;
+    }
 }
