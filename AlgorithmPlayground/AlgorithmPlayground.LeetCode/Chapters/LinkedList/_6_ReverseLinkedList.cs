@@ -19,4 +19,22 @@ public static class _6_ReverseLinkedList
         }
         return newHead;
     }
+
+    public static ListNode? ReverseListRecursively(ListNode? head)
+    {
+        return ReverseRecursively(head, null);
+    }
+
+    private static ListNode? ReverseRecursively(ListNode? head, ListNode? newHead)
+    {
+        if (head is null)
+        {
+            return newHead;
+        }
+
+        var next = head.next;
+        head.next = newHead;
+
+        return ReverseRecursively(next, head);
+    } 
 }

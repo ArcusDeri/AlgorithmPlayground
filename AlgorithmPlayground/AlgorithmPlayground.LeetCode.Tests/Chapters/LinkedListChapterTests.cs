@@ -280,6 +280,43 @@ public class LinkedListChapterTests
     }
 
     [Fact]
+    public void _6_ReverseListRecursively_ShouldReturnNull_WhenGivenListIsNull()
+    {
+        // Arrange
+        ListNode? head = null;
+
+        // Act
+        var result = _6_ReverseLinkedList.ReverseListRecursively(head);
+
+        // Assert
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void _6_ReverseListRecursively_ShouldReturnExpectedResult_WhenListHasManyNodes()
+    {
+        // Arrange
+        var head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+        var expectedValues = new[] {5, 4, 3, 2, 1};
+        var resultValues = new int[5];
+        var i = 0;
+
+        // Act
+        var result = _6_ReverseLinkedList.ReverseListRecursively(head);
+        var currentNode = result;
+        while (currentNode is { })
+        {
+            resultValues[i] = currentNode.val;
+            currentNode = currentNode.next;
+            i++;
+        }
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal(expectedValues, resultValues);
+    }
+
+    [Fact]
     public void _7_RemoveElementsShould_ReturnExpectedResult_WhenGivenListHasTwoElementsToRemove()
     {
         // Arrange
