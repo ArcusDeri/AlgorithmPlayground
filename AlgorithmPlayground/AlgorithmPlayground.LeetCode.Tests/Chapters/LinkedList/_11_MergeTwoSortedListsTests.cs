@@ -2,12 +2,12 @@
 using AlgorithmPlayground.LeetCode.Model;
 using Xunit;
 
-namespace AlgorithmPlayground.LeetCode.Tests.Chapters;
+namespace AlgorithmPlayground.LeetCode.Tests.Chapters.LinkedList;
 
 public class _11_MergeTwoSortedListsTests
 {
     [Fact]
-    public void MergeTwoLists_ShouldReturnListOfExpectedShape_ForTwoPopulatedLists()
+    public void _1_MergeTwoLists_ShouldReturnListOfExpectedShape_ForTwoPopulatedLists()
     {
         // Arrange
         var list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
@@ -28,7 +28,7 @@ public class _11_MergeTwoSortedListsTests
     }
 
     [Fact]
-    public void MergeTwoLists_ShouldReturnNull_WhenGivenListsAreNull()
+    public void _2_MergeTwoLists_ShouldReturnNull_WhenGivenListsAreNull()
     {
         // Arrange
         ListNode? list1 = null;
@@ -42,7 +42,7 @@ public class _11_MergeTwoSortedListsTests
     }
 
     [Fact]
-    public void MergeTwoLists_ShouldReturnListOfExpectedShape_WhenOneListIsNullAndOtherHasOneElement()
+    public void _3_MergeTwoLists_ShouldReturnListOfExpectedShape_WhenOneListIsNullAndOtherHasOneElement()
     {
         // Arrange
         const int expectedValue = 0;
