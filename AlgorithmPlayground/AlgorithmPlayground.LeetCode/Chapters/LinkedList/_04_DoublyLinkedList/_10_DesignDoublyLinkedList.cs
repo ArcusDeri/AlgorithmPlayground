@@ -1,6 +1,6 @@
 ﻿using AlgorithmPlayground.LeetCode.Model;
 
-namespace AlgorithmPlayground.LeetCode.Chapters.LinkedList;
+namespace AlgorithmPlayground.LeetCode.Chapters.LinkedList._04_DoublyLinkedList;
 
 public class _10_DesignDoublyLinkedList
 {

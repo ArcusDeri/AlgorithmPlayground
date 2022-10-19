@@ -1,4 +1,6 @@
 ﻿using AlgorithmPlayground.LeetCode.Chapters.LinkedList;
+using AlgorithmPlayground.LeetCode.Chapters.LinkedList._02_TwoPointerTechnique;
+using AlgorithmPlayground.LeetCode.Chapters.LinkedList._03_ClassicProblems;
 using AlgorithmPlayground.LeetCode.Model;
 using Xunit;
 
@@ -17,7 +19,7 @@ public class LinkedListChapterTests
         head.next = middleNode;
 
         // Act
-        var result = _2_LinkedListCycle.HasCycle(head);
+        var result = _02_LinkedListCycle.HasCycle(head);
 
         // Assert
         Assert.True(result);
@@ -32,7 +34,7 @@ public class LinkedListChapterTests
         head.next = tail;
 
         // Act
-        var result = _2_LinkedListCycle.HasCycle(head);
+        var result = _02_LinkedListCycle.HasCycle(head);
 
         // Assert
         Assert.True(result);
@@ -43,7 +45,7 @@ public class LinkedListChapterTests
     {
         // Arrange
         // Act
-        var result = _2_LinkedListCycle.HasCycle(new ListNode(1));
+        var result = _02_LinkedListCycle.HasCycle(new ListNode(1));
 
         // Assert
         Assert.False(result);
@@ -56,7 +58,7 @@ public class LinkedListChapterTests
         var head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
 
         // Act
-        var result = _2_LinkedListCycle.HasCycle(head);
+        var result = _02_LinkedListCycle.HasCycle(head);
 
         // Assert
         Assert.False(result);
@@ -73,7 +75,7 @@ public class LinkedListChapterTests
         head.next = middleNode;
 
         // Act
-        var result = _3_LinkedListCycleII.DetectCycle(head);
+        var result = _03_LinkedListCycleII.DetectCycle(head);
 
         // Assert
         Assert.Same(middleNode, result);
@@ -88,7 +90,7 @@ public class LinkedListChapterTests
         head.next = tail;
 
         // Act
-        var result = _3_LinkedListCycleII.DetectCycle(head);
+        var result = _03_LinkedListCycleII.DetectCycle(head);
 
         // Assert
         Assert.Same(head, result);
@@ -101,7 +103,7 @@ public class LinkedListChapterTests
         var head = new ListNode(1);
 
         // Act
-        var result = _3_LinkedListCycleII.DetectCycle(head);
+        var result = _03_LinkedListCycleII.DetectCycle(head);
 
         // Assert
         Assert.Null(result);
@@ -114,7 +116,7 @@ public class LinkedListChapterTests
         var head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
 
         // Act
-        var result = _3_LinkedListCycleII.DetectCycle(head);
+        var result = _03_LinkedListCycleII.DetectCycle(head);
 
         // Assert
         Assert.Null(result);
@@ -129,7 +131,7 @@ public class LinkedListChapterTests
         var listB = new ListNode(5, new ListNode(6, new ListNode(1, commonList)));
 
         // Act
-        var result = _4_IntersectionOfTwoLinkedList.GetIntersectionNode(listA, listB);
+        var result = _04_IntersectionOfTwoLinkedList.GetIntersectionNode(listA, listB);
 
         // Assert
         Assert.Same(commonList, result);
@@ -144,7 +146,7 @@ public class LinkedListChapterTests
         var listB = new ListNode(3, commonList);
 
         // Act
-        var result = _4_IntersectionOfTwoLinkedList.GetIntersectionNode(listA, listB);
+        var result = _04_IntersectionOfTwoLinkedList.GetIntersectionNode(listA, listB);
 
         // Assert
         Assert.Same(commonList, result);
@@ -158,7 +160,7 @@ public class LinkedListChapterTests
         var listB = new ListNode(1, new ListNode(5));
 
         // Act
-        var result = _4_IntersectionOfTwoLinkedList.GetIntersectionNode(listA, listB);
+        var result = _04_IntersectionOfTwoLinkedList.GetIntersectionNode(listA, listB);
 
         // Assert
         Assert.Null(result);
@@ -173,7 +175,7 @@ public class LinkedListChapterTests
         var resultValueSum = 0;
 
         // Act
-        var result = _5_RemoveNthNodeFromEndOfList.RemoveNthFromEnd(head, 2);
+        var result = _05_RemoveNthNodeFromEndOfList.RemoveNthFromEnd(head, 2);
         while (result is { })
         {
             resultValueSum += result.val;
@@ -191,7 +193,7 @@ public class LinkedListChapterTests
         var head = new ListNode(1);
 
         // Act
-        var result = _5_RemoveNthNodeFromEndOfList.RemoveNthFromEnd(head, 1);
+        var result = _05_RemoveNthNodeFromEndOfList.RemoveNthFromEnd(head, 1);
 
         // Assert
         Assert.Null(result);
@@ -205,7 +207,7 @@ public class LinkedListChapterTests
         var expectedValue = 1;
 
         // Act
-        var result = _5_RemoveNthNodeFromEndOfList.RemoveNthFromEnd(head, 1);
+        var result = _05_RemoveNthNodeFromEndOfList.RemoveNthFromEnd(head, 1);
 
         // Assert
         Assert.Null(result.next);
@@ -220,7 +222,7 @@ public class LinkedListChapterTests
         var expectedValue = 2;
 
         // Act
-        var result = _5_RemoveNthNodeFromEndOfList.RemoveNthFromEnd(head, 2);
+        var result = _05_RemoveNthNodeFromEndOfList.RemoveNthFromEnd(head, 2);
 
         // Assert
         Assert.Null(result.next);
@@ -232,7 +234,7 @@ public class LinkedListChapterTests
     {
         // Arrange
         // Act
-        var result = _6_ReverseLinkedList.ReverseList(null);
+        var result = _06_ReverseLinkedList.ReverseList(null);
 
         // Assert
         Assert.Null(result);
@@ -246,7 +248,7 @@ public class LinkedListChapterTests
         const int expectedFirstValue = 2, expectedSecondValue = 1;
 
         // Act
-        var result = _6_ReverseLinkedList.ReverseList(head);
+        var result = _06_ReverseLinkedList.ReverseList(head);
 
         // Assert
         Assert.NotNull(result);
@@ -265,7 +267,7 @@ public class LinkedListChapterTests
         var i = 0;
 
         // Act
-        var result = _6_ReverseLinkedList.ReverseList(head);
+        var result = _06_ReverseLinkedList.ReverseList(head);
         var currentNode = result;
         while (currentNode is { })
         {
@@ -286,7 +288,7 @@ public class LinkedListChapterTests
         ListNode? head = null;
 
         // Act
-        var result = _6_ReverseLinkedList.ReverseListRecursively(head);
+        var result = _06_ReverseLinkedList.ReverseListRecursively(head);
 
         // Assert
         Assert.Null(result);
@@ -302,7 +304,7 @@ public class LinkedListChapterTests
         var i = 0;
 
         // Act
-        var result = _6_ReverseLinkedList.ReverseListRecursively(head);
+        var result = _06_ReverseLinkedList.ReverseListRecursively(head);
         var currentNode = result;
         while (currentNode is { })
         {
@@ -327,7 +329,7 @@ public class LinkedListChapterTests
         var i = 0;
 
         // Act
-        var result = _7_RemoveLInkedListElements.RemoveElements(head, valueToRemove);
+        var result = _07_RemoveLInkedListElements.RemoveElements(head, valueToRemove);
         while (result is {})
         {
             resultValues[i] = result.val;
@@ -345,7 +347,7 @@ public class LinkedListChapterTests
         // Arrange
         var valueToRemove = 1;
         // Act
-        var result = _7_RemoveLInkedListElements.RemoveElements(null, 1);
+        var result = _07_RemoveLInkedListElements.RemoveElements(null, 1);
 
         // Assert
         Assert.Null(result);
@@ -359,7 +361,7 @@ public class LinkedListChapterTests
         var head = new ListNode(valueToRemove, new ListNode(valueToRemove, new ListNode(valueToRemove, new ListNode(valueToRemove))));
 
         // Act
-        var result = _7_RemoveLInkedListElements.RemoveElements(head, valueToRemove);
+        var result = _07_RemoveLInkedListElements.RemoveElements(head, valueToRemove);
 
         // Assert
         Assert.Null(result);
@@ -374,7 +376,7 @@ public class LinkedListChapterTests
         var head = new ListNode(valueToRemove, new ListNode(2));
 
         // Act
-        var result = _7_RemoveLInkedListElements.RemoveElements(head, valueToRemove);
+        var result = _07_RemoveLInkedListElements.RemoveElements(head, valueToRemove);
 
         // Assert
         Assert.NotNull(result);
@@ -392,7 +394,7 @@ public class LinkedListChapterTests
         var i = 0;
 
         // Act
-        var result = _8_OddEvenLinkedList.OddEvenList(head);
+        var result = _08_OddEvenLinkedList.OddEvenList(head);
         while (result != null)
         {
             resultValues[i++] = result.val;
@@ -413,7 +415,7 @@ public class LinkedListChapterTests
         var i = 0;
 
         // Act
-        var result = _8_OddEvenLinkedList.OddEvenList(head);
+        var result = _08_OddEvenLinkedList.OddEvenList(head);
         while (result != null)
         {
             resultValues[i++] = result.val;
@@ -431,7 +433,7 @@ public class LinkedListChapterTests
         var head = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
 
         // Act
-        var result = _9_PalindromeLinkedList.IsPalindrome(head);
+        var result = _09_PalindromeLinkedList.IsPalindrome(head);
 
         // Assert
         Assert.True(result);
@@ -444,70 +446,9 @@ public class LinkedListChapterTests
         var head = new ListNode(1, new ListNode(2));
 
         // Act
-        var result = _9_PalindromeLinkedList.IsPalindrome(head);
+        var result = _09_PalindromeLinkedList.IsPalindrome(head);
 
         // Assert
         Assert.False(result);
-    }
-
-    [Fact]
-    public void _10_DesignDoublyLinkedList_ShouldHaveExpectedShape_ForScenario1()
-    {
-        // Arrange
-        var list = new _10_DesignDoublyLinkedList();
-        const int expectedHeadVal = -1;
-
-        // Act
-        list.AddAtHead(1);
-        list.AddAtTail(3);
-        list.AddAtIndex(1, 2);
-        list.DeleteAtIndex(1);
-        list.DeleteAtIndex(3);
-        list.DeleteAtIndex(0);
-        list.DeleteAtIndex(0);
-
-        // Assert
-        Assert.Equal(expectedHeadVal, list.Get(0));
-    }
-
-    [Fact]
-    public void _10_DesignDoublyLinkedList_ShouldHaveExpectedShape_ForScenario2()
-    {
-        // Arrange
-        var list = new _10_DesignDoublyLinkedList();
-        const int expectedHeadVal = 1;
-        const int expectedTailVal = 3;
-        const int expectedTailIndex = 1;
-
-        // Act
-        list.AddAtHead(1);
-        list.AddAtTail(3);
-        list.AddAtIndex(1, 2);
-        list.DeleteAtIndex(1);
-
-        // Assert
-        Assert.NotNull(list);
-        Assert.Equal(expectedHeadVal, list.Get(0));
-        Assert.Equal(expectedTailVal, list.Get(expectedTailIndex));
-    }
-
-    [Fact]
-    public void _10_DesignDoublyLinkedList_ShouldHaveExpectedShape_ForScenario3()
-    {
-        // Arrange
-        var list = new _10_DesignDoublyLinkedList();
-        const int expectedHeadVal = 1;
-        const int expectedTailVal = 3;
-        const int expectedTailIndex = 1;
-
-        // Act
-        list.AddAtHead(1);
-        list.AddAtTail(3);
-        list.AddAtIndex(3, 2);
-
-        // Assert
-        Assert.NotNull(list);
-        Assert.Equal(expectedHeadVal, list.Get(0));
-        Assert.Equal(expectedTailVal, list.Get(expectedTailIndex));
     }
 }

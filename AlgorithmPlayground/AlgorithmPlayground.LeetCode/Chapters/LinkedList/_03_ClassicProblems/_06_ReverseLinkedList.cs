@@ -1,8 +1,8 @@
 ﻿using AlgorithmPlayground.LeetCode.Model;
 
-namespace AlgorithmPlayground.LeetCode.Chapters.LinkedList;
+namespace AlgorithmPlayground.LeetCode.Chapters.LinkedList._03_ClassicProblems;
 
-public static class _6_ReverseLinkedList
+public static class _06_ReverseLinkedList
 {
     /// <summary>
     /// https://leetcode.com/explore/learn/card/linked-list/219/classic-problems/1204/

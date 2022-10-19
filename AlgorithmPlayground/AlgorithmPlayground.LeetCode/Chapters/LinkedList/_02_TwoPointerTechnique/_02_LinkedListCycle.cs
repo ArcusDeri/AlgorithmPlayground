@@ -1,8 +1,8 @@
 ﻿using AlgorithmPlayground.LeetCode.Model;
 
-namespace AlgorithmPlayground.LeetCode.Chapters.LinkedList;
+namespace AlgorithmPlayground.LeetCode.Chapters.LinkedList._02_TwoPointerTechnique;
 
-public static class _2_LinkedListCycle
+public static class _02_LinkedListCycle
 {
     /// <summary>
     /// https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1212/
