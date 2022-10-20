@@ -1,4 +1,4 @@
-﻿namespace AlgorithmPlayground.LeetCode.Chapters.Arrays;
+﻿namespace AlgorithmPlayground.LeetCode.Chapters.Arrays._05_InPlaceOperations;
 
 public static class _14_RemoveElement
 {

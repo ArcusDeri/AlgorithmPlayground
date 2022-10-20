@@ -1,4 +1,4 @@
-﻿namespace AlgorithmPlayground.LeetCode.Chapters.Arrays;
+﻿namespace AlgorithmPlayground.LeetCode.Chapters.Arrays._04_Searching;
 
 public static class _09_ValidMountainArray {
 

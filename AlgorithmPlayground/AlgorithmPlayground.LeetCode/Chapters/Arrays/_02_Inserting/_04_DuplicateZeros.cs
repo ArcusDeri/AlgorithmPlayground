@@ -1,4 +1,4 @@
-﻿namespace AlgorithmPlayground.LeetCode.Chapters.Arrays;
+﻿namespace AlgorithmPlayground.LeetCode.Chapters.Arrays._02_Inserting;
 
 public static class _04_DuplicateZeros
 {

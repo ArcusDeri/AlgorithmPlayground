@@ -1,4 +1,4 @@
-﻿namespace AlgorithmPlayground.LeetCode.Chapters.Arrays;
+﻿namespace AlgorithmPlayground.LeetCode.Chapters.Arrays._01_Introduction;
 
 public static class _01_MaxConsecutiveOnes
 {
