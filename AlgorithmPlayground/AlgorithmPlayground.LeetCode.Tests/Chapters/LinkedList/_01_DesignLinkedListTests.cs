@@ -6,7 +6,7 @@ namespace AlgorithmPlayground.LeetCode.Tests.Chapters.LinkedList;
 public class _01_DesignLinkedListTests
 {
     [Fact]
-    public void _01_DesignLinkedList_ShouldHaveExpectedShape_ForScenario1()
+    public void _01_DesignLinkedList_ShouldHaveExpectedShape_V1()
     {
         // Arrange
         var list = new _01_DesignLinkedList();
@@ -26,7 +26,7 @@ public class _01_DesignLinkedListTests
     }
 
     [Fact]
-    public void _01_DesignLinkedList_ShouldHaveExpectedShape_ForScenario2()
+    public void _02_DesignLinkedList_ShouldHaveExpectedShape_V2()
     {
         // Arrange
         var list = new _01_DesignLinkedList();
@@ -47,7 +47,7 @@ public class _01_DesignLinkedListTests
     }
 
     [Fact]
-    public void _01_DesignLinkedList_ShouldHaveExpectedShape_ForScenario3()
+    public void _03_DesignLinkedList_ShouldHaveExpectedShape_V3()
     {
         // Arrange
         var list = new _01_DesignLinkedList();

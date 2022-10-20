@@ -2,7 +2,7 @@
 
 namespace AlgorithmPlayground.LeetCode.Chapters.LinkedList._03_ClassicProblems;
 
-public static class _07_RemoveLInkedListElements
+public static class _07_RemoveLinkedListElements
 {
     /// <summary>
     /// https://leetcode.com/explore/learn/card/linked-list/219/classic-problems/1207/
