@@ -1,6 +1,6 @@
-﻿namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide;
+﻿namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide._01_ChallengeProblems;
 
-public static class _2_1672_RichestCustomerWealth
+public static class _02_1672_RichestCustomerWealth
 {
     /// <summary>
     /// https://leetcode.com/problems/richest-customer-wealth/

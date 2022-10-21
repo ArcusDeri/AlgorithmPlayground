@@ -1,8 +1,8 @@
 ﻿using AlgorithmPlayground.LeetCode.Model;
 
-namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide;
+namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide._01_ChallengeProblems;
 
-public static class _5_876_MiddleOfTheLinkedList
+public static class _05_876_MiddleOfTheLinkedList
 {
     /// <summary>
     /// https://leetcode.com/problems/middle-of-the-linked-list/ 

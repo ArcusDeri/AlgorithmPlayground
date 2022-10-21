@@ -1,6 +1,6 @@
-﻿namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide;
+﻿namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide._01_ChallengeProblems;
 
-public static class _4_1342_NumberOfStepsToReduceANumberToZero
+public static class _04_1342_NumberOfStepsToReduceANumberToZero
 {
     /// <summary>
     /// https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/

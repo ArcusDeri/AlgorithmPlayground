@@ -1,6 +1,6 @@
-﻿namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide;
+﻿namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide._01_ChallengeProblems;
 
-public static class _1_1480_RunningSumOf1DArray
+public static class _01_1480_RunningSumOf1DArray
 {
     /// <summary>
     /// https://leetcode.com/problems/running-sum-of-1d-array/

@@ -1,6 +1,6 @@
-﻿namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide;
+﻿namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide._01_ChallengeProblems;
 
-public static class _3_412_FizzBuzz
+public static class _03_412_FizzBuzz
 {
     /// <summary>
     /// Unusual, but very fast (&lt;8ms)

@@ -1,6 +1,6 @@
-﻿namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide;
+﻿namespace AlgorithmPlayground.LeetCode.Chapters.BeginnersGuide._01_ChallengeProblems;
 
-public static class _6_383_RansomNote
+public static class _06_383_RansomNote
 {
     /// <summary>
     /// https://leetcode.com/problems/ransom-note/
