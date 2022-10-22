@@ -1,6 +1,6 @@
-﻿namespace AlgorithmPlayground.LeetCode.TopInterviewQuestionsEasy;
+﻿namespace AlgorithmPlayground.LeetCode.TopInterviewQuestionsEasy.Array;
 
-public static class _3_RotateArray
+public static class _03_RotateArray
 {
     /// <summary>
     /// https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/646/

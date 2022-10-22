@@ -1,6 +1,6 @@
-﻿namespace AlgorithmPlayground.LeetCode.TopInterviewQuestionsEasy;
+﻿namespace AlgorithmPlayground.LeetCode.TopInterviewQuestionsEasy.Array;
 
-public static class _4_ContainsDuplicate
+public static class _04_ContainsDuplicate
 {
     /// <summary>
     /// https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/578/

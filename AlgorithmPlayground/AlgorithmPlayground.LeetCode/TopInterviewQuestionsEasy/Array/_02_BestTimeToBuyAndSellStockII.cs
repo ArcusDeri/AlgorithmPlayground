@@ -1,6 +1,6 @@
-﻿namespace AlgorithmPlayground.LeetCode.TopInterviewQuestionsEasy;
+﻿namespace AlgorithmPlayground.LeetCode.TopInterviewQuestionsEasy.Array;
 
-public static class _2_BestTimeToBuyAndSellStockII
+public static class _02_BestTimeToBuyAndSellStockII
 {
     /// <summary>
     /// https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/564/
