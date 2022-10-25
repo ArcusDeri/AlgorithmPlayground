@@ -9,14 +9,16 @@ public static class _12_AddTwoNumbers
     /// </summary>
     public static ListNode? AddTwoNumbers(ListNode? l1, ListNode? l2)
     {
-        ListNode? prev = null;
+        var dummyHead = new ListNode();
+        var currentNode = dummyHead;
         var overflow = 0;
 
         while (l1 is {} && l2 is {})
         {
             var subSum = l1.val + l2.val + overflow;
             overflow = subSum / 10;
-            prev = new ListNode(subSum % 10, prev);
+            currentNode.next = new ListNode(subSum % 10);
+            currentNode = currentNode.next;
             l1 = l1.next;
             l2 = l2.next;
         }
@@ -26,29 +28,16 @@ public static class _12_AddTwoNumbers
         {
             var subSum = leftNode.val + overflow;
             overflow = subSum / 10;
-            prev = new ListNode(subSum % 10, prev);
+            currentNode.next = new ListNode(subSum % 10);
+            currentNode = currentNode.next;
             leftNode = leftNode.next;
         }
 
         if (overflow > 0)
         {
-            prev = new ListNode(overflow, prev);
+            currentNode.next = new ListNode(overflow);
         }
 
-        return Reverse(prev);
-    }
-
-    private static ListNode? Reverse(ListNode? head)
-    {
-        ListNode? newHead = null;
-        while (head is {})
-        {
-            var subList = head.next;
-            head.next = newHead;
-            newHead = head;
-            head = subList;
-        }
-
-        return newHead;
+        return dummyHead.next;
     }
 }
