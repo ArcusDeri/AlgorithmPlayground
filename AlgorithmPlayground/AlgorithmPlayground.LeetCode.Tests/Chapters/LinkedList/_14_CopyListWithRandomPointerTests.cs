@@ -41,6 +41,7 @@ public class _14_CopyListWithRandomPointerTests
         Assert.NotNull(resultNode);
         Assert.Null(resultNode.random);
         Assert.Equal(expectedValues, resultValues);
+        Assert.NotSame(resultNode, a);
         Assert.Same(resultNode.next.random, resultNode);
         Assert.Same(resultNode.next.next.random, resultNode.next.next.next.next);
         Assert.Same(resultNode.next.next.next.random, resultNode.next.next);
@@ -73,6 +74,7 @@ public class _14_CopyListWithRandomPointerTests
         // Assert
         Assert.NotNull(resultNode);
         Assert.Equal(expectedValues, resultValues);
+        Assert.NotSame(resultNode, a);
         Assert.Same(resultNode.random, resultNode.next);
         Assert.Same(resultNode.next.random, resultNode.next);
     }
@@ -104,6 +106,7 @@ public class _14_CopyListWithRandomPointerTests
         // Assert
         Assert.NotNull(resultNode);
         Assert.Equal(expectedValues, resultValues);
+        Assert.NotSame(resultNode, a);
         Assert.Same(resultNode.next.random, resultNode);
         Assert.Null(resultNode.random);
         Assert.Null(resultNode.next.next.random);
