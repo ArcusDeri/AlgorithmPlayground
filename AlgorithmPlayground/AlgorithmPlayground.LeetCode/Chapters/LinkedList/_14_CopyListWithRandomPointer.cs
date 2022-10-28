@@ -39,4 +39,35 @@ public static class _14_CopyListWithRandomPointer
         
         return map[head];
     }
+
+    public static ListNodeWithRandom? CopyRandomListInPlace(ListNodeWithRandom? head)
+    {
+        // duplicate each node
+        var current = head;
+        while (current is {})
+        {
+            var originalNext = current.next;
+            current.next = new ListNodeWithRandom(current.val);
+            current.next.next = originalNext;
+            current = originalNext;
+        }
+
+        // assign "random" for new nodes
+        current = head;
+        while (current?.next is {})
+        {
+            var originalRandom = current.random;
+            current.next.random = originalRandom?.next;
+            current = current.next.next;
+        }
+
+        // detach old nodes
+        current = head?.next;
+        while (current?.next is {})
+        {
+            current.next = current.next.next;
+            current = current.next;
+        }
+        return head?.next;
+    }
 }
