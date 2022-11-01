@@ -9,10 +9,41 @@ public static class _09_PalindromeLinkedList
     /// </summary>
     public static bool IsPalindrome(ListNode head)
     {
+        var walker = new ListNode(0, head);
+        var runner = head;
+
+        while (runner?.next != null)
+        {
+            walker = walker.next;
+            runner = runner.next.next;
+        }
+
+        var reversedHalfStart = Reverse(walker.next);
+        var secondHalfPtr = reversedHalfStart;
+        var result = true;
+        var firstHalfEnd = walker;
+        walker = head;
+
+        while (result && secondHalfPtr is { })
+        {
+            if (secondHalfPtr.val != walker.val)
+            {
+                result = false;
+            }
+            walker = walker.next;
+            secondHalfPtr = secondHalfPtr.next;
+        }
+        firstHalfEnd.next = Reverse(reversedHalfStart);
+
+        return true;
+    }
+
+    public static bool IsPalindromeV1(ListNode head)
+    {
         var values = new List<int>();
         var currentNode = head;
 
-        while (currentNode is {})
+        while (currentNode is { })
         {
             values.Add(currentNode.val);
             currentNode = currentNode.next;
@@ -30,5 +61,18 @@ public static class _09_PalindromeLinkedList
         }
 
         return true;
+    }
+
+    public static ListNode Reverse(ListNode head)
+    {
+        ListNode? newHead = null;
+        while (head is { })
+        {
+            var subList = head.next;
+            head.next = newHead;
+            newHead = head;
+            head = subList;
+        }
+        return newHead;
     }
 }
