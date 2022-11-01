@@ -35,7 +35,7 @@ public static class _09_PalindromeLinkedList
         }
         firstHalfEnd.next = Reverse(reversedHalfStart);
 
-        return true;
+        return result;
     }
 
     public static bool IsPalindromeV1(ListNode head)
