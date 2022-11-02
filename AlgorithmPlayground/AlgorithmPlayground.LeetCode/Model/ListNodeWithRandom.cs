@@ -1,14 +1,10 @@
-﻿namespace AlgorithmPlayground.LeetCode.Model;
+﻿// ReSharper disable InconsistentNaming
+namespace AlgorithmPlayground.LeetCode.Model;
 
 public class ListNodeWithRandom
 {
-    // ReSharper disable once InconsistentNaming
     public int val;
-
-    // ReSharper disable once InconsistentNaming
     public ListNodeWithRandom? next;
-
-    // ReSharper disable once InconsistentNaming
     public ListNodeWithRandom? random;
 
     public ListNodeWithRandom(int val = 0, ListNodeWithRandom? next = null, ListNodeWithRandom? random = null)
