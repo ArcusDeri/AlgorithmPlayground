@@ -7,30 +7,26 @@ public static class _03_RotateArray
     /// </summary>
     public static void Rotate(int[] nums, int k)
     {
-        // TODO: there is a better way, should be revisited in future
-        if (k >= nums.Length)
+        
+        k %= nums.Length;
+        if (k == 0)
         {
-            k %= nums.Length;
-            if (k == 0)
-            {
-                return;
-            }
+            return;
         }
 
-        var temp = new int[k];
-        for (int i = nums.Length - k, j = 0; i < nums.Length; i++, j++)
-        {
-            temp[j] = nums[i];
-        }
+        Reverse(nums, 0, nums.Length);
+        Reverse(nums, 0, k);
+        Reverse(nums, k, nums.Length);
+    }
 
-        for (int i = nums.Length - 1; i >= k; i--)
+    private static void Reverse(int[] nums, int from, int to)
+    {
+        to--; // Avoid IndexOutOfRangeException
+        while (from < to)
         {
-            nums[i] = nums[i - k];
-        }
-
-        for (int i = 0; i < temp.Length; i++)
-        {
-            nums[i] = temp[i];
+            (nums[to], nums[from]) = (nums[from], nums[to]);
+            to--;
+            from++;
         }
     }
 }
