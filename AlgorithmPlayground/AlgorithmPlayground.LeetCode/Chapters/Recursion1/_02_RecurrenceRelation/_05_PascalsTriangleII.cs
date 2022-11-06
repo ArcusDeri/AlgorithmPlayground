@@ -21,6 +21,25 @@ public static class _05_PascalsTriangleII
         return result;
     }
 
+    public static IList<int> GetRowIteratively(int rowIndex)
+    {
+        var result = new List<int>();
+        for (var i = 0; i < rowIndex + 1; i++)
+        {
+            result.Add(1);
+        }
+
+        for (var i = 0; i < result.Count; i++)
+        {
+            for (int j = i - 1; j > 0; j--)
+            {
+                result[j] += result[j - 1];
+            }
+        }
+
+        return result;
+    }
+
     private static int GetPascalTriangleNumber(int column, int row)
     {
         if (MemoTable.ContainsKey((column, row)))
