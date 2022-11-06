@@ -40,6 +40,26 @@ public static class _05_PascalsTriangleII
         return result;
     }
 
+    public static IList<int> GetRowQuickly(int rowIndex)
+    {
+        var result = new List<int> {1};
+        if (rowIndex == 0)
+        {
+            return result;
+        }
+
+        var tempMultiplier = rowIndex;
+        var divider = 1;
+        var current = 1L;
+        for (var i = 1; i < rowIndex + 1; i++, tempMultiplier--, divider++)
+        {
+            current = current * tempMultiplier / divider;
+            result.Add((int)current);
+        }
+
+        return result;
+    }
+
     private static int GetPascalTriangleNumber(int column, int row)
     {
         if (MemoTable.ContainsKey((column, row)))

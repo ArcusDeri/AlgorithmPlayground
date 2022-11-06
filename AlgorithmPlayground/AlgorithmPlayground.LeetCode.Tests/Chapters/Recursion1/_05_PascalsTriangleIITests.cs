@@ -15,7 +15,7 @@ public class _05_PascalsTriangleIITests
     {
         // Arrange
         // Act
-        var result = _05_PascalsTriangleII.GetRowIteratively(rowIndex);
+        var result = _05_PascalsTriangleII.GetRowQuickly(rowIndex);
 
         // Assert
         Assert.Equal(expectedResult, result);
