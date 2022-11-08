@@ -39,4 +39,26 @@ public static class _11_MergeTwoSortedLists
 
         return resultHead.next;
     }
+
+    public static ListNode? MergeTwoListsRecursively(ListNode? list1, ListNode? list2)
+    {
+        if (list1 is null)
+        {
+            return list2;
+        }
+
+        if (list2 is null)
+        {
+            return list1;
+        }
+
+        if (list1.val < list2.val)
+        {
+            list1.next = MergeTwoListsRecursively(list1.next, list2);
+            return list1;
+        }
+
+        list2.next = MergeTwoListsRecursively(list1, list2.next);
+        return list2;
+    }
 }
