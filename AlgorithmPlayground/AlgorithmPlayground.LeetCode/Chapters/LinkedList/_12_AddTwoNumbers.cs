@@ -11,31 +11,23 @@ public static class _12_AddTwoNumbers
     {
         var dummyHead = new ListNode();
         var currentNode = dummyHead;
-        var overflow = 0;
+        var carry = 0;
 
-        while (l1 is {} && l2 is {})
+        while (l1 is {} || l2 is {})
         {
-            var subSum = l1.val + l2.val + overflow;
-            overflow = subSum / 10;
+            var firstNumber = l1?.val ?? 0;
+            var secondNumber = l2?.val ?? 0;
+            var subSum = firstNumber + secondNumber + carry;
+            carry = subSum > 9 ? 1 : 0;
             currentNode.next = new ListNode(subSum % 10);
             currentNode = currentNode.next;
-            l1 = l1.next;
-            l2 = l2.next;
+            l1 = l1?.next;
+            l2 = l2?.next;
         }
 
-        var leftNode = l1 ?? l2;
-        while (leftNode is { })
+        if (carry > 0)
         {
-            var subSum = leftNode.val + overflow;
-            overflow = subSum / 10;
-            currentNode.next = new ListNode(subSum % 10);
-            currentNode = currentNode.next;
-            leftNode = leftNode.next;
-        }
-
-        if (overflow > 0)
-        {
-            currentNode.next = new ListNode(overflow);
+            currentNode.next = new ListNode(carry);
         }
 
         return dummyHead.next;
