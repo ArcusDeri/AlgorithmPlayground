@@ -2,18 +2,18 @@
 
 namespace AlgorithmPlayground.LeetCode.Chapters.LinkedList;
 
-public static class _12_AddTwoNumbers
+public class _12_AddTwoNumbers
 {
     /// <summary>
     /// https://leetcode.com/explore/learn/card/linked-list/213/conclusion/1228/
     /// </summary>
-    public static ListNode? AddTwoNumbers(ListNode? l1, ListNode? l2)
+    public ListNode? AddTwoNumbers(ListNode? l1, ListNode? l2)
     {
         var dummyHead = new ListNode();
         var currentNode = dummyHead;
         var carry = 0;
 
-        while (l1 is {} || l2 is {})
+        while (l1 is { } || l2 is { })
         {
             var firstNumber = l1?.val ?? 0;
             var secondNumber = l2?.val ?? 0;
@@ -31,5 +31,25 @@ public static class _12_AddTwoNumbers
         }
 
         return dummyHead.next;
+    }
+
+    public ListNode? AddTwoNumbersRecursively(ListNode? l1, ListNode? l2)
+    {
+        return InnerAddTwoNumbersRecursively(l1, l2, 0);
+    }
+
+    private ListNode? InnerAddTwoNumbersRecursively(ListNode? l1, ListNode? l2, int carry)
+    {
+        if (l1 is null && l2 is null && carry is 0)
+        {
+            return null;
+        }
+
+        var val1 = l1?.val ?? 0;
+        var val2 = l2?.val ?? 0;
+        var resultVal = val1 + val2 + carry;
+
+        carry = resultVal < 10 ? 0 : 1;
+        return new ListNode(resultVal % 10, InnerAddTwoNumbersRecursively(l1?.next, l2?.next, carry));
     }
 }

@@ -10,6 +10,7 @@ public class _12_AddTwoNumbersTests
     public void _01_AddTwoNumbers_ShouldReturnExpectedSum()
     {
         // Arrange
+        var solver = new _12_AddTwoNumbers();
         var expectedSum = new[] {7, 0, 8};
         var number1 = new ListNode(2, new ListNode(4, new ListNode(3)));
         var number2 = new ListNode(5, new ListNode(6, new ListNode(4)));
@@ -17,7 +18,7 @@ public class _12_AddTwoNumbersTests
         var i = 0;
 
         // Act
-        var result = _12_AddTwoNumbers.AddTwoNumbers(number1, number2);
+        var result = solver.AddTwoNumbers(number1, number2);
         while (result is { })
         {
             resultSum[i++] = result.val;
@@ -32,12 +33,13 @@ public class _12_AddTwoNumbersTests
     public void _02_AddTwoNumbers_ShouldReturnExpectedSum()
     {
         // Arrange
+        var solver = new _12_AddTwoNumbers();
         const int expectedSum = 0;
         var number1 = new ListNode();
         var number2 = new ListNode();
 
         // Act
-        var result = _12_AddTwoNumbers.AddTwoNumbers(number1, number2);
+        var result = solver.AddTwoNumbers(number1, number2);
 
         // Assert
         Assert.NotNull(result);
@@ -49,6 +51,7 @@ public class _12_AddTwoNumbersTests
     public void _03_AddTwoNumbers_ShouldReturnExpectedSum()
     {
         // Arrange
+        var solver = new _12_AddTwoNumbers();
         var expectedSum = new[] {8, 9, 9, 9, 0, 0, 0, 1};
         var number1 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
         var number2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
@@ -56,7 +59,7 @@ public class _12_AddTwoNumbersTests
         var resultSum = new int[expectedSum.Length];
 
         // Act
-        var result = _12_AddTwoNumbers.AddTwoNumbers(number1, number2);
+        var result = solver.AddTwoNumbers(number1, number2);
         while (result is { })
         {
             resultSum[i++] = result.val;
@@ -71,6 +74,7 @@ public class _12_AddTwoNumbersTests
     public void _04_AddTwoNumbers_ShouldReturnExpectedSum()
     {
         // Arrange
+        var solver = new _12_AddTwoNumbers();
         var expectedSum = new[] {2, 0, 1};
         var number1 = new ListNode(8, new ListNode(9));
         var number2 = new ListNode(4);
@@ -78,7 +82,53 @@ public class _12_AddTwoNumbersTests
         var resultSum = new int[expectedSum.Length];
 
         // Act
-        var result = _12_AddTwoNumbers.AddTwoNumbers(number1, number2);
+        var result = solver.AddTwoNumbers(number1, number2);
+        while (result is { })
+        {
+            resultSum[i++] = result.val;
+            result = result.next;
+        }
+
+        // Assert
+        Assert.Equal(expectedSum, resultSum);
+    }
+
+    [Fact]
+    public void _05_AddTwoNumbersRecursively_ShouldReturnExpectedSum()
+    {
+        // Arrange
+        var solver = new _12_AddTwoNumbers();
+        var expectedSum = new[] {7, 0, 8};
+        var number1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+        var number2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+        var resultSum = new int[expectedSum.Length];
+        var i = 0;
+
+        // Act
+        var result = solver.AddTwoNumbersRecursively(number1, number2);
+        while (result is { })
+        {
+            resultSum[i++] = result.val;
+            result = result.next;
+        }
+
+        // Assert
+        Assert.Equal(expectedSum, resultSum);
+    }
+
+    [Fact]
+    public void _06_AddTwoNumbers_ShouldReturnExpectedSum()
+    {
+        // Arrange
+        var solver = new _12_AddTwoNumbers();
+        var expectedSum = new[] {8, 9, 9, 9, 0, 0, 0, 1};
+        var number1 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
+        var number2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
+        var i = 0;
+        var resultSum = new int[expectedSum.Length];
+
+        // Act
+        var result = solver.AddTwoNumbersRecursively(number1, number2);
         while (result is { })
         {
             resultSum[i++] = result.val;
