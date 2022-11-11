@@ -14,29 +14,33 @@ public static class _13_FlattenAMultiLevelDoublyLinkedList
             return null;
         }
 
-        var dummyHead = new DoubleListNodeWithChild();
-        var builderNode = dummyHead;
-        var stack = new Stack<DoubleListNodeWithChild>();
-        stack.Push(head);
-
-        while (stack.Any())
+        var ptr = head;
+        while (ptr is not null)
         {
-            var current = stack.Pop();
-            builderNode.next = new DoubleListNodeWithChild(current.val, null, builderNode);
-            builderNode = builderNode.next;
+            if (ptr.child is null)
+            {
+                ptr = ptr.next;
+                continue;
+            }
 
-            if (current.next is { })
+            var temp = ptr.child;
+            while (temp.next is not null)
             {
-                stack.Push(current.next);
+                temp = temp.next;
             }
-            if (current.child is { })
+
+            temp.next = ptr.next;
+            if (ptr.next is not null)
             {
-                stack.Push(current.child);
+                ptr.next.prev = temp;
             }
+
+            ptr.next = ptr.child;
+            ptr.child.prev = ptr;
+            ptr.child = null;
         }
 
-        dummyHead.next.prev = null;
-        return dummyHead.next;
+        return head;
     }
 
 }
