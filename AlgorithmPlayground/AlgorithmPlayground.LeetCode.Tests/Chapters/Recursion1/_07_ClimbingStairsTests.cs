@@ -9,7 +9,7 @@ public class _07_ClimbingStairsTests
     [InlineData(2, 2)]
     [InlineData(3, 3)]
     [InlineData(8, 5)]
-    public void ClimbStairs_ShouldReturnExpectedResult(int expectedResult, int n)
+    public void _01_ClimbStairs_ShouldReturnExpectedResult(int expectedResult, int n)
     {
         // Arrange
         var solver = new _07_ClimbingStairs();
