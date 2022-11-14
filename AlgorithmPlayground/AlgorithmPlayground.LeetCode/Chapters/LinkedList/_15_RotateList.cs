@@ -8,50 +8,39 @@ public static class _15_RotateList
     /// https://leetcode.com/explore/learn/card/linked-list/213/conclusion/1295/
     /// </summary>
     public static ListNode? RotateRight(ListNode? head, int k)
-    { 
-        var listLength = 0;
+    {
+        if (head is null || k == 0)
+        {
+            return head;
+        }
+
+        var listLength = 1;
         var front = head;
 
         // resolve list length
-        while (front is {})
+        while (front is {next: {}})
         {
             listLength++;
             front = front.next;
         }
 
-        if (listLength == 0)
-        {
-            return null;
-        }
-
-        k = k >= listLength ? k % listLength : k;
+        k %= listLength;
         if (k == 0)
         {
             return head;
         }
 
-        front = head;
+        front.next = head;
         var distance = 0;
-        // move one pointer ahead to maintain the distance
-        while (distance < k)
+        while (distance < listLength - k)
         {
             front = front.next;
             distance++;
         }
 
-        var back = head;
-        // find node that has to be detached...
-        while (front?.next is {})
-        {
-            back = back.next;
-            front = front.next;
-        }
+        head = front.next;
+        front.next = null;
 
-        // ...and move it to the beginning
-        var newHead = back.next;
-        back.next = null;
-        front.next = head;
-
-        return newHead;
+        return head;
     }
 }
