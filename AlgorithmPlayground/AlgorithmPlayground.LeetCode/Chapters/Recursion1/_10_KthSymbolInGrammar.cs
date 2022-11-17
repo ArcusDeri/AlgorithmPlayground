@@ -2,24 +2,25 @@
 
 public static class _10_KthSymbolInGrammar
 {
+    /// <summary>
+    /// https://leetcode.com/explore/learn/card/recursion-i/253/conclusion/1675/
+    /// </summary>
+    /// <param name="n">Row number (1-indexed)</param>
+    /// <param name="k">Kth element (1-indexed)</param>
+    /// <returns>Value at Kth position</returns>
     public static int KthGrammar(int n, int k)
     {
-        return GetNthRow(new[] {0}, n)[k - 1];
-    }
-
-    private static int[] GetNthRow(int[] row, int n)
-    {
-        if (row.Length == Math.Pow(2, n - 1))
+        if (n == 1 && k == 1)
         {
-            return row;
+            return 0;
         }
 
-        var initialRowLength = row.Length;
-        var arr = row.Concat(row).ToArray();
-        for (int i = initialRowLength; i < arr.Length; i++)
+        var parentSize = (int) Math.Pow(2, n - 2);
+        if (k <= parentSize)
         {
-            arr[i] = arr[i] == 0 ? 1 : 0;
+            return KthGrammar(n - 1, k);
         }
-        return GetNthRow(arr, n);
+
+        return KthGrammar(n - 1, k - parentSize) ^ 1;
     }
 }
