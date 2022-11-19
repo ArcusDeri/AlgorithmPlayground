@@ -39,7 +39,7 @@ public static class _07_RemoveLinkedListElements
         if (head is null){
             return head;
         }
-        head.next = RemoveElements(head.next, val);
+        head.next = RemoveElementsRecursively(head.next, val);
         return head.val == val ? head.next : head;
     }
 }
