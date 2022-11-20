@@ -7,30 +7,23 @@ public static class _01_FindPivotIndex
     /// </summary>
     public static int PivotIndex(int[] nums)
     {
-        if (nums.Length == 1)
-        {
-            return nums[0] == 0 ? 0 : -1;
-        }
-
-        var rightSum = 0;
-        for (var i = 1; i < nums.Length; i++)
-        {
-            rightSum += nums[i];
-        }
-
-        if (rightSum == 0)
-        {
-            return 0;
-        }
-
+        var sum = 0;
         var leftSum = 0;
-        var pivot = 1;
-        while (leftSum != rightSum && pivot < nums.Length)
+        foreach (var num in nums)
         {
-            leftSum += nums[pivot - 1];
-            rightSum -= nums[pivot++];
+            sum += num;
         }
 
-        return leftSum == rightSum ? pivot - 1 : -1;
+        for (var i = 0; i < nums.Length; i++)
+        {
+            if (leftSum == sum - leftSum - nums[i])
+            {
+                return i;
+            }
+
+            leftSum += nums[i];
+        }
+
+        return -1;
     }
 }
