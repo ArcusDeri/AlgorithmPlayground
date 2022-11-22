@@ -7,23 +7,21 @@ public static class _03_PlusOne
     /// </summary>
     public static int[] PlusOne(int[] digits)
     {
-        var carry = 0;
-        digits[digits.Length - 1] += 1;
-
-        for (var i = digits.Length - 1; i > -1; i--)
+        for (var i = digits.Length - 1; i >= 0; i--)
         {
-            digits[i] += carry;
-            if (digits[i] > 9)
+            if (digits[i] < 9)
             {
-                digits[i] %= 10;
-                carry = 1;
+                digits[i]++;
+                return digits;
             }
-            else
-            {
-                carry = 0;
-            }
+
+            digits[i] = 0;
         }
-        
-        return carry == 0 ? digits : (new[] {1}).Concat(digits).ToArray();
+
+        var newDigits = new int[digits.Length + 1];
+        newDigits[0] = 1;
+        Array.Copy(digits, 0, newDigits, 1, digits.Length);
+
+        return newDigits;
     }
 }
