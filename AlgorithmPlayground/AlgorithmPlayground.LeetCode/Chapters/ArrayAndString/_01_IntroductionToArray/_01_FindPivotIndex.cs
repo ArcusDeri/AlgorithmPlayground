@@ -1,4 +1,4 @@
-﻿namespace AlgorithmPlayground.LeetCode.Chapters.ArrayAndString.IntroductionToArray;
+﻿namespace AlgorithmPlayground.LeetCode.Chapters.ArrayAndString._01_IntroductionToArray;
 
 public static class _01_FindPivotIndex
 {

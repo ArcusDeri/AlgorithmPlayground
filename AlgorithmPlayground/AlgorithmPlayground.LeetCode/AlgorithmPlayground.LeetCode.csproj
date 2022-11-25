@@ -7,4 +7,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Chapters\ArrayAndString\_02_IntroductionTo2DArray" />
+    </ItemGroup>
+
 </Project>

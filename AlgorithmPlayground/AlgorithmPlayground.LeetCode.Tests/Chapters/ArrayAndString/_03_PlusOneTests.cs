@@ -1,4 +1,4 @@
-﻿using AlgorithmPlayground.LeetCode.Chapters.ArrayAndString.IntroductionToArray;
+﻿using AlgorithmPlayground.LeetCode.Chapters.ArrayAndString._01_IntroductionToArray;
 using Xunit;
 
 namespace AlgorithmPlayground.LeetCode.Tests.Chapters.ArrayAndString;
