@@ -11,56 +11,56 @@ public static class _05_SpiralMatrix
         var n = matrix[0].Length;
         var result = new int[m * n];
 
-        var rightLimit = n - 1;
-        var leftLimit = 0;
-        var upLimit = 1;
-        var downLimit = m - 1;
+        var top = 0;
+        var right = n - 1;
+        var bottom = m - 1;
+        var left = 0;
+        var resultCount = 0;
 
-        var row = 0;
-        var col = 0;
-        var dir = n > 1 ? 1 : 2;
-        for (var resultCount = 0; resultCount < m * n; resultCount++)
+        while (resultCount < m * n)
         {
-            result[resultCount] = matrix[row][col];
-            if (resultCount == m * n)
+            // rightwards
+            for (var i = left; i <= right; i++)
             {
-                return result;
+                result[resultCount++] = matrix[top][i];
+            }
+            top++;
+            if (top > bottom)
+            {
+                break;
             }
 
-            switch (dir)
+            // downwards
+            for (var i = top; i <= bottom; i++)
             {
-                case 1: // rightwards
-                    col++;
-                    if (col == rightLimit)
-                    {
-                        rightLimit--;
-                        dir++;
-                    }
-                    break;
-                case 2: // downwards
-                    row++;
-                    if (row == downLimit)
-                    {
-                        downLimit--;
-                        dir++;
-                    }
-                    break;
-                case 3: // leftwards
-                    col--;
-                    if (col == leftLimit)
-                    {
-                        leftLimit++;
-                        dir++;
-                    }
-                    break;
-                case 4: // upwards
-                    row--;
-                    if (row == upLimit)
-                    {
-                        upLimit++;
-                        dir = 1;
-                    }
-                    break;
+                result[resultCount++] = matrix[i][right];
+            }
+            right--;
+            if (right < left)
+            {
+                break;
+            }
+
+            // leftwards
+            for (var i = right; i >= left; i--)
+            {
+                result[resultCount++] = matrix[bottom][i];
+            }
+            bottom--;
+            if (top > bottom)
+            {
+                break;
+            }
+
+            // upwards
+            for (var i = bottom; i >= top; i--)
+            {
+                result[resultCount++] = matrix[i][left];
+            }
+            left++;
+            if (left > right)
+            {
+                break;
             }
         }
 
