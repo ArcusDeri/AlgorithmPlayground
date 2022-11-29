@@ -4,6 +4,9 @@ namespace AlgorithmPlayground.LeetCode.Chapters.ArrayAndString._03_IntroductionT
 
 public static class _07_AddBinary
 {
+    /// <summary>
+    /// https://leetcode.com/explore/learn/card/array-and-string/203/introduction-to-string/1160/
+    /// </summary>
     public static string AddBinary(string a, string b)
     {
         var resultBuilder = new StringBuilder();
