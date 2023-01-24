@@ -62,12 +62,18 @@ public static class _14_CopyListWithRandomPointer
         }
 
         // detach old nodes
-        current = head?.next;
-        while (current?.next is {})
+        current = head;
+        var newHead = new ListNodeWithRandom(0);
+        var newHeadCurrent = newHead;
+        while (current is {})
         {
-            current.next = current.next.next;
+            var currNext = current.next.next;
+            newHeadCurrent.next = current.next;
+            current.next = currNext;
+            newHeadCurrent = newHeadCurrent.next;
             current = current.next;
         }
-        return head?.next;
+
+        return newHead.next;
     }
 }
